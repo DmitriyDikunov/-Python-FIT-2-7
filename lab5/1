@@ -1,0 +1,67 @@
+import numpy as np 
+
+from scipy import optimize 
+
+from scipy.misc import derivative 
+
+import math 
+
+  
+
+x0 = -0.87 
+
+y0 = 0.49 
+
+delta = 0.1 
+
+#   ВАРІАНТ 8 
+
+#   2y-cos(x+1)=0   
+
+#   x+sin(y)=-0.4 
+
+#   змінив місцями рівняння, так як неможливо винести "х" з під знаку косинуса (cos(x+1))  
+
+#   у другому рівнянні sin(y) 'y' не виноситься  
+
+def f1(y): 
+
+    return -0.4-math.sin(y)  
+
+def f2 (x): 
+
+    return (math.cos(x+1)/2)  
+
+     
+
+     
+
+def iter (x,y,e): 
+
+    xn = x 
+
+    yn = y 
+
+    xn1 = f2(x) 
+
+    yn1 = f1(y) 
+
+    n = 1 
+
+    while ((abs(xn1-xn)>=e) & (abs(yn1-yn) >=e)): 
+
+        xn = xn1 
+
+        yn = yn1 
+
+        xn1 = f2(yn) 
+
+        yn1 = f1(xn) 
+
+        n += 1 
+
+    print ('Simple iteration:') 
+
+    print ('x=', yn, '\ny=',xn,'\nThe amount of iteration = ',n) 
+
+iter(x0,y0,0.001) 
