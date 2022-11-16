@@ -1,0 +1,37 @@
+from array import array 
+
+from statistics import mean 
+
+from turtle import dot 
+
+import numpy as np 
+
+import random   
+
+ 
+
+n = int(input('Ввести к-сть рядків')) 
+
+m = int(input('Ввести к-сть стовпців')) 
+
+ 
+
+A= np.random.randint(1,10, size=(n,m))  
+
+print(A) 
+
+print('-----------------') 
+
+mean = np.mean(A,axis=0) 
+
+print('середнє значення стовпців') 
+
+print(mean) 
+
+print('-----------------') 
+
+print('середнє значення рядків') 
+
+mean2 = np.mean(A,axis=1) 
+
+print(mean2) 
