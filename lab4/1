@@ -1,0 +1,17 @@
+from turtle import dot 
+
+import numpy as np 
+
+ 
+
+matA = np.array([[1,2],[4,-1]]) 
+
+matB = np.array([[2,-3],[-4,1]]) 
+
+first = matA.dot(matB) 
+
+second= matB.dot(matA) 
+
+ 
+
+print(first-second) 
