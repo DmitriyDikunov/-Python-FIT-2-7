@@ -1,0 +1,35 @@
+import sympy as sp
+from sympy import *
+a=-1
+b=0
+eps=0.0001
+#похідна функції 
+
+x=Symbol('x')
+f=(x**4-12*x**3-9)
+f1=sp.diff(f)
+print("Похідна >>> ",f1)
+f2=sp.diff(f1) # похідна від похідної
+print("Похідна від похідної >>>",f2)
+#################
+
+# f(a)
+function=a**4-12*a**3-9   
+print("f(a) >>> ",function)
+#f''(a)
+function2 = 12*a**2-72*a
+print("f''(a) >>> ",function2)
+
+if function*function2>0 : # f(a)*f''(a)>0
+    x0=a
+    xi=b
+else:
+    x0=b
+    xi=a
+
+xi_1=xi-((xi-x0)/((xi**4-12*xi**3-9)-(x0**4-12*x0**3-9))*(xi**4-12*xi**3-9))
+while (abs(xi_1-xi)>eps):
+    xi=xi_1       
+    xi_1=xi-((xi-x0)/((xi**4-12*xi**3-9)-(x0**4-12*x0**3-9))*(xi**4-12*xi**3-9))
+else:
+    print(f'Корінь знаходиться в точці x =', xi_1)
