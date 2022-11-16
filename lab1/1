@@ -1,0 +1,22 @@
+from cmath import sqrt
+import math
+
+print(math.sqrt(9.8))
+a=math.sqrt(9.8)
+print(23/15)
+b=23/15
+
+#граничні абсолютні похибки
+x1=math.fabs(3.13-a)
+print("Абс гранична похибка корня з 9.8>>>", x1)
+x2=math.fabs(1.53-b)
+print("Абс гранична похибка 23/15>>>", x2)
+
+
+
+y1=math.fabs(x1/3.13)
+y2=math.fabs(x2/1.53)
+if y1>y2:
+    print("Значення 23/15 більш точне")
+else:
+    print("Значення Корінь з 9.8 більш точне")
