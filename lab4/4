@@ -1,0 +1,13 @@
+from turtle import dot 
+
+import numpy as np 
+
+ 
+
+matA = np.array([[1,5,-5],[4,0,3],[2,-10,3]]) 
+
+ 
+
+m = np.linalg.det(matA) 
+
+print(m) 
