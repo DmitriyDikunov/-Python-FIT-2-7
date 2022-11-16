@@ -1,0 +1,15 @@
+from turtle import dot 
+
+import numpy as np 
+
+ 
+
+matA = np.array([[1,1,1,1],[1,1,-1,-1],[1,-1,1,-1],[1,-1,-1,1]]) 
+
+ 
+
+m = np.linalg.inv(matA) 
+
+print(m) 
+
+ 
